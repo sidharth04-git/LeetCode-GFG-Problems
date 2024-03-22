@@ -1,0 +1,26 @@
+# Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+# Input: nums = [-4,-1,0,3,10]
+  Output: [0,1,9,16,100]
+
+# Solution - 
+
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        int n = nums.size();  // Gives The Size of Array
+
+        vector<int>temp(n);  // Temporary Vector of Size n to Store Square of Nums Array
+
+        for(int i=0; i<=n-1; i++)
+        {
+            temp[i] = nums[i]*nums[i];
+        }
+
+        // Sort
+
+        sort(temp.begin(),temp.end()); // Inbuilt Sort Function For Sorting Elements Of An Array
+        
+        return temp;
+        
+    }
+};
