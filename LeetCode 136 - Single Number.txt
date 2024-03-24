@@ -1,0 +1,21 @@
+## Given a non-empty array of integers nums, every element appears twice except for one. Find that single one
+## Example - Input: nums = [2,2,1]
+             Output: 1
+
+
+## Hint - We Use Bit Manipulation here and X-OR the Whole Array Element with ans initializing it first with zero
+
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int n = nums.size();
+        int ans = 0;
+        for(int i=0; i<=n-1; i++)
+        {
+            ans = ans ^ nums[i];
+        }
+        return ans;
+        
+    }
+};
