@@ -1,0 +1,38 @@
+// Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+
+
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+        vector<bool>row(m,false);
+        vector<bool>cols(n,false);
+        // Traverse in Matrix array
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                if(matrix[i][j]==0){
+                    row[i] = true; // means zero set krna hai
+                    cols[j] = true;
+                }
+            }
+        }
+        // Set rows to zero in matrix vector
+        for(int i=0; i<m; i++){ // rows array me travel krega ye loop
+            if(row[i] == true){
+                for(int j=0; j<n; j++){  // matrix vector me travel krega
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        // Set columns to zero in matrix array
+        for(int j=0; j<n; j++){
+            if(cols[j] == true){
+                for(int i=0; i<m; i++){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        
+    }
+};
