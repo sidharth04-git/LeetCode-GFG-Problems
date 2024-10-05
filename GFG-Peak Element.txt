@@ -3,7 +3,7 @@ Given an 0-indexed array of integers arr[] of size n, find its peak element and 
 Note: The output will be 1 if the index returned by your function is correct; otherwise, it will be 0.
 
 Input: n = 3, arr[] = {1, 2, 3} 
-Output: 1 
+Output: 2
 
 CODE - 
 
