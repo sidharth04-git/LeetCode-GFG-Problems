@@ -1,0 +1,27 @@
+Given an array/list 'ARR' of integers and a position ‘M’. You have to reverse the array after that position.
+
+Example:
+
+We have an array ARR = {1, 2, 3, 4, 5, 6} and M = 3 , considering 0 
+based indexing so the subarray {5, 6} will be reversed and our 
+output array will be {1, 2, 3, 4, 6, 5}.
+
+
+CODE
+
+
+void reverseArray(vector<int> &arr , int m) {
+     
+    int n = arr.size();
+    int i = m+1; // given idx se ek aage se swap krege
+    int j = n-1; // last idx
+    while(i<=j){
+        // swap(arr[i] , arr[j]);
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
+    }
+
+}
