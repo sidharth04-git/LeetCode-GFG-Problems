@@ -1,0 +1,22 @@
+You are given an integer array arr[]. The task is to find the sum of it.
+
+Examples:
+
+Input: arr[] = [1, 2, 3, 4]
+Output: 10
+Explanation: 1 + 2 + 3 + 4 = 10.
+
+CODE 
+
+class Solution {
+  public:
+    // Function to return sum of elements
+    int sum(vector<int>& arr) {
+        int n = arr.size(); // Store Size
+        int sum = 0; // Store answer
+        for(int i=0; i<n; i++){
+            sum+=arr[i];
+        }
+        return sum;
+    }
+};
