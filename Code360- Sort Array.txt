@@ -1,0 +1,34 @@
+Given an array arr consisting of only 0's and 1's in random order. Modify the array in-place to segregate 0s onto the left side and 1s onto the right side of the array.
+
+Examples :
+Problem statement
+You are given an array consisting of 'N' positive integers where each integer is either 0 or 1 or 2. Your task is to sort the given array in non-decreasing order.
+
+Note :
+1. The array consists of only 3 distinct integers 0, 1, 2.
+2. The array is non-empty.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+CODE
+
+void sortArray(vector<int> &arr, int n)
+{
+    // Dutch Flag Algorithm
+    int low = 0;
+    int mid = 0;
+    int high = n-1;
+    while(mid<=high){
+        if(arr[mid]==2){
+            swap(arr[mid] , arr[high]);
+            high--;
+        }
+        else if(arr[mid]==0){
+            swap(arr[mid] , arr[low]);
+            mid++;
+            low++;
+        }
+        else{
+            mid++;
+        }
+    }
+}
