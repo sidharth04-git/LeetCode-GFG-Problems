@@ -1,0 +1,20 @@
+Problem statement
+You are given an array 'ARR' of integers. Your task is to modify the array so that all the array elements having zero values get pushed to the left and all the array elements having non-zero value come after them while maintaining their relative order.
+
+For ex -- 1 2 0 0 1
+Output -- 0 0 1 2 1
+----------------------------------------------------------------------------------------------------------------------------------------
+
+CODE
+
+#include <bits/stdc++.h> 
+void moveZerosToLeft(int *arr, int n) 
+{
+    int nonZero = n-1; // last idx pe non zero value store krege
+    for(int i=n-1; i>=0; i--){  // ulta loop use krege
+        if(arr[i]!=0){
+            swap(arr[i] , arr[nonZero]);
+            nonZero--;
+        }
+    }
+}
