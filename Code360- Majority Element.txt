@@ -1,0 +1,18 @@
+Problem statement
+Given an array/list of length ‘N’, you are supposed to return the majority element of the array/list.
+
+The majority element is the element that appears more than floor(N/2) times in the given array/list.
+
+Note:
+You may assume that the given array/list is non-empty and the majority element always exists in the array.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+CODE
+
+#include <bits/stdc++.h> 
+int majorityElement(vector<int> &nums)
+{
+    int n = nums.size();
+    sort(nums.begin() , nums.end());
+    return nums[n/2];
+}
