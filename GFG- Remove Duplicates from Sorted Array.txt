@@ -1,0 +1,23 @@
+Given a sorted array arr. Return the size of the modified array which contains only distinct elements.
+
+Input: arr = [2, 2, 2, 2, 2]
+Output: [2]
+
+Explanation: After removing all the duplicates only one instance of 2 will remain i.e. [2] so modified array will contains 2 at first position and you should return 1 after modifying the array, the driver code will print the modified array elements.
+----------------------------------------------------------------------------------------------------------------------------------------
+CODE
+
+class Solution {
+  public:
+    int remove_duplicate(vector<int> &arr) {
+        int n = arr.size();
+        int i = 0;
+        for(int j=1; j<n; j++){
+            if(arr[j]!=arr[i]){
+                arr[i+1] = arr[j];
+                i++;
+            }
+        }
+        return i+1;
+    }
+};
