@@ -1,0 +1,30 @@
+Given a number n, return a list containing the first n Fibonacci numbers.
+
+Note: The first two number of the series are 1 and 1.
+
+Examples:
+
+Input: n = 5
+Output: [1, 1, 2, 3, 5]
+----------------------------------------------------------------------------------------------------------------------------------------
+CODE
+
+class Solution
+{
+    public:
+    //Function to return list containing first n fibonacci numbers.
+    vector<long long> printFibb(int n) 
+    {
+        vector<long long>ans;
+        long a = 1;
+        long b = 1;
+        long sum = 0;
+        for(int i=1; i<=n; i++){
+            ans.push_back(a);
+            sum = a+b;
+            a=b;
+            b=sum;
+        }
+        return ans;
+    }
+};
