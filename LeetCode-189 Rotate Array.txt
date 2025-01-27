@@ -1,0 +1,35 @@
+Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+Example 1:
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4]
+
+----------------------------------------------------------------------------------------------------------------------------------------
+CODE
+
+class Solution {
+public:
+    void rotatePart(int i , int j , vector<int>&v){
+        int n = v.size();
+        while(i<=j){
+            int temp = v[i];
+            v[i] = v[j];
+            v[j] = temp;
+            i++;
+            j--;
+        }
+    }
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k = k%n;  // for larger k value
+        rotatePart(0 , n-k-1 , nums);
+        rotatePart(n-k , n-1 , nums);
+        rotatePart(0 , n-1 , nums);
+    }
+};
+
